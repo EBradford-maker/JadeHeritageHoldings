@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Automation for Field Service Businesses — Jade Heritage Holdings</title>
+    <meta name="description" content="We help plumbers, HVAC specialists, home inspectors, pest control companies, and repair services automate scheduling, dispatching, and customer management.">
+    <meta property="og:title" content="AI & Automation for Field Service Businesses — Jade Heritage Holdings">
+    <meta property="og:description" content="Run your field service business smarter, not harder. AI-powered scheduling, dispatching, and customer management.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vertical.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav nav--scrolled" id="navbar">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="index.html#about" class="nav__link">About</a>
+                <a href="index.html#services" class="nav__link">Services</a>
+                <a href="index.html#portfolio" class="nav__link">Portfolio</a>
+                <a href="assessment.html" class="nav__link">Assessment</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__links">
+            <a href="index.html" class="mobile-menu__link">Home</a>
+            <a href="index.html#about" class="mobile-menu__link">About</a>
+            <a href="index.html#services" class="mobile-menu__link">Services</a>
+            <a href="index.html#portfolio" class="mobile-menu__link">Portfolio</a>
+            <a href="assessment.html" class="mobile-menu__link">Assessment</a>
+            <a href="index.html#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="vertical-hero">
+        <div class="vertical-hero__bg vertical-hero__bg--field-services"></div>
+        <div class="vertical-hero__overlay"></div>
+        <!-- SVG Pattern — wrench/tools motif -->
+        <svg class="vertical-hero__pattern" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="fsPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <!-- Wrench shape -->
+                    <path d="M25 15 C20 15 16 19 16 24 C16 27 17.5 29.5 20 31 L20 45 L30 45 L30 31 C32.5 29.5 34 27 34 24 C34 19 30 15 25 15 Z" fill="none" stroke="rgba(200,169,81,0.05)" stroke-width="0.8"/>
+                    <circle cx="25" cy="22" r="3" fill="none" stroke="rgba(200,169,81,0.04)" stroke-width="0.5"/>
+                    <!-- Gear/cog -->
+                    <path d="M72 50 L74 46 L78 46 L80 50 L78 54 L74 54 Z" fill="none" stroke="rgba(200,169,81,0.05)" stroke-width="0.6"/>
+                    <circle cx="76" cy="50" r="2" fill="rgba(200,169,81,0.03)"/>
+                    <!-- Small bolt -->
+                    <rect x="50" y="78" width="8" height="12" rx="1" fill="none" stroke="rgba(200,169,81,0.04)" stroke-width="0.5"/>
+                    <line x1="50" y1="82" x2="58" y2="82" stroke="rgba(200,169,81,0.03)" stroke-width="0.4"/>
+                    <line x1="50" y1="86" x2="58" y2="86" stroke="rgba(200,169,81,0.03)" stroke-width="0.4"/>
+                    <!-- Dot accents -->
+                    <circle cx="10" cy="70" r="1.5" fill="rgba(200,169,81,0.04)"/>
+                    <circle cx="90" cy="20" r="1.5" fill="rgba(200,169,81,0.04)"/>
+                </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#fsPattern)"/>
+        </svg>
+        <div class="vertical-hero__content">
+            <div class="section__label" style="justify-content: center;">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Field Services</span>
+                <span class="section__label-line"></span>
+            </div>
+            <h1 class="vertical-hero__title">Run Your Field Service Business Smarter, Not Harder</h1>
+            <p class="vertical-hero__subtitle">We help plumbers, HVAC specialists, home inspectors, pest control companies, and repair services automate scheduling, dispatching, and customer management so you can focus on the work that matters.</p>
+            <a href="assessment.html" class="btn btn--gold">Take the AI Readiness Assessment</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="section vertical-pain">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">The Challenge</span>
+            </div>
+            <h2 class="section__title reveal">Sound Familiar?</h2>
+            <div class="gold-divider reveal"></div>
+            <p class="vertical-pain__intro reveal">Running a field service business means juggling a hundred things at once. If these challenges hit close to home, you're not alone — and there's a better way.</p>
+            <div class="vertical-pain__grid">
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="10" y1="14" x2="14" y2="18"/><line x1="14" y1="14" x2="10" y2="18"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Scheduling Chaos</h3>
+                    <p class="pain-card__desc">Double bookings, missed appointments, endless phone tag with customers and techs. Your calendar is a mess, and every mistake costs you time, money, and reputation.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/><path d="M7 20h10"/><line x1="9" y1="22" x2="15" y2="22"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Dispatching Inefficiency</h3>
+                    <p class="pain-card__desc">Wrong technician sent to the wrong job, wasted drive time, no route optimization. You're burning fuel and hours because dispatching runs on gut feel instead of data.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Paperwork Overload</h3>
+                    <p class="pain-card__desc">Handwritten invoices, lost work orders, manual follow-ups eating up your evenings. You got into this business to do the work, not to drown in paper every Sunday night.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="15" y1="10" x2="15" y2="10"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Customer Communication Gaps</h3>
+                    <p class="pain-card__desc">Missed follow-ups, no automated appointment reminders, lost opportunities for reviews and repeat business. Your customers slip through the cracks because there's no system keeping track.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section vertical-solutions">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Our Approach</span>
+            </div>
+            <h2 class="section__title reveal">How We Help Field Service Businesses Thrive</h2>
+            <div class="gold-divider reveal"></div>
+            <div class="solutions-grid">
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">01</div>
+                    <div class="solution-item__content">
+                        <h3>AI-Powered Scheduling</h3>
+                        <p>We build intelligent scheduling systems that eliminate double bookings and optimize your calendar automatically. Customers book online, techs get notified instantly, and your schedule runs itself — no more phone tag, no more mistakes.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">02</div>
+                    <div class="solution-item__content">
+                        <h3>Smart Dispatching & Route Optimization</h3>
+                        <p>Our dispatch tools use AI to match the right technician to the right job based on skills, location, and availability — then optimize their route to reduce drive time. Less windshield time means more billable hours and happier techs.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">03</div>
+                    <div class="solution-item__content">
+                        <h3>Digital Work Orders & Automated Invoicing</h3>
+                        <p>Replace paper with mobile-friendly digital work orders that include photo capture, customer signatures, and automatic invoice generation. Jobs get documented on-site, invoices go out the moment the work is done, and you get paid faster.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">04</div>
+                    <div class="solution-item__content">
+                        <h3>Automated Customer Communication</h3>
+                        <p>From appointment reminders and on-my-way notifications to follow-up sequences and review request campaigns, we automate the entire customer communication lifecycle. Stay top of mind, earn more five-star reviews, and turn one-time calls into lifelong customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="vertical-stats">
+        <div class="container">
+            <div class="vertical-stats__inner reveal">
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">60%</div>
+                    <div class="vertical-stat__label">Reduction in missed appointments</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">35%</div>
+                    <div class="vertical-stat__label">Increase in repeat business</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">20hrs</div>
+                    <div class="vertical-stat__label">Saved per week on admin tasks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section vertical-case">
+        <div class="container">
+            <div class="vertical-case__card reveal">
+                <div class="section__label">
+                    <span class="section__label-line"></span>
+                    <span class="section__label-text">Case Study</span>
+                </div>
+                <h2 class="vertical-case__title">How a 12-Person HVAC Company Transformed Their Operations</h2>
+                <div class="gold-divider"></div>
+                <div class="vertical-case__grid">
+                    <div class="vertical-case__challenge">
+                        <h4>The Challenge</h4>
+                        <p>A growing HVAC company was running on paper work orders, losing track of appointments, and the owner was spending every Sunday evening doing invoices. There was no system for follow-ups — completed jobs disappeared into a filing cabinet, and repeat business depended entirely on customers remembering to call back.</p>
+                    </div>
+                    <div class="vertical-case__solution">
+                        <h4>Our Solution</h4>
+                        <p>We built a custom scheduling platform with AI-powered dispatch that matches techs to jobs by skill, location, and availability. We replaced paper with digital work orders featuring mobile photo capture and customer signatures. Invoicing was automated to trigger on job completion. Finally, we implemented customer follow-up and review request sequences that run on autopilot.</p>
+                    </div>
+                    <div class="vertical-case__results">
+                        <h4>The Results</h4>
+                        <ul>
+                            <li>20+ hours per week saved on administrative tasks</li>
+                            <li>$180K revenue increase in year one</li>
+                            <li>60% fewer missed appointments</li>
+                            <li>Google rating improved from 3.9 to 4.8 stars</li>
+                            <li>Owner reclaimed weekends — no more Sunday invoicing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section vertical-tools">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Our Toolkit</span>
+            </div>
+            <h2 class="section__title reveal">What We Build for Field Service Teams</h2>
+            <div class="gold-divider reveal"></div>
+            <div class="vertical-tools__grid">
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">AI Scheduling Assistant</h3>
+                    <p class="tool-card__desc">Auto-books appointments based on technician availability, skill set, and geographic location. Customers self-schedule, conflicts are prevented automatically.</p>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">Dispatch Optimization</h3>
+                    <p class="tool-card__desc">AI routes your technicians for minimum drive time and maximum job coverage. Real-time adjustments when emergencies or cancellations change the plan.</p>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">Digital Work Orders</h3>
+                    <p class="tool-card__desc">Mobile-friendly work orders with photo capture, parts tracking, and on-screen customer signatures. Everything documented, nothing lost.</p>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">Automated Invoicing</h3>
+                    <p class="tool-card__desc">Invoices generated automatically on job completion and sent to customers instantly. Integrated with payment processing so you get paid faster.</p>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">Customer Follow-Up Engine</h3>
+                    <p class="tool-card__desc">Automated appointment reminders, post-service satisfaction surveys, and review request campaigns. Turn completed jobs into five-star reviews and repeat business.</p>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </div>
+                    <h3 class="tool-card__title">Performance Dashboard</h3>
+                    <p class="tool-card__desc">Track technician productivity, job completion rates, revenue per route, and customer satisfaction scores — all in one real-time dashboard built for owners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="section vertical-testimonial">
+        <div class="container">
+            <div class="vertical-testimonial__card reveal">
+                <svg class="vertical-testimonial__quote" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                <p class="vertical-testimonial__text">Before Jade Heritage, I was running my plumbing business out of a notebook and my wife's kitchen table. Now I have a real system — my guys know where they're going, customers get reminders automatically, and I haven't done a paper invoice in six months. I wish I'd done this years ago.</p>
+                <div class="vertical-testimonial__author">
+                    <div class="vertical-testimonial__avatar">MT</div>
+                    <div>
+                        <div class="vertical-testimonial__name">Marcus Torres</div>
+                        <div class="vertical-testimonial__role">Owner, Torres Plumbing & Drain Services</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section vertical-cta-section">
+        <div class="container">
+            <div class="vertical-cta__inner reveal">
+                <h2 class="vertical-cta__title">Ready to Run Your Field Service Business Smarter?</h2>
+                <p class="vertical-cta__desc">Take our free AI Readiness Assessment to see exactly where automation can save you time, reduce headaches, and grow revenue — or reach out directly for a no-obligation consultation.</p>
+                <div class="vertical-cta__buttons">
+                    <a href="assessment.html" class="btn btn--gold">Take the AI Assessment</a>
+                    <a href="index.html#contact" class="btn vertical-cta__outline">Schedule a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/logo.png" alt="Jade Heritage Holdings" class="footer__logo">
+                    <p class="footer__tagline">Helping families continue their business legacy and excel into the future.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="assessment.html">Assessment</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer__links">
+                    <h4>Industries</h4>
+                    <a href="manufacturing.html">Manufacturing</a>
+                    <a href="logistics.html">Logistics &amp; Import/Export</a>
+                    <a href="professional-services.html">Professional Services</a>
+                    <a href="field-services.html">Field Services</a>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>info@jadeheritageholdings.com</p>
+                    <p>(800) 555-0199</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Jade Heritage Holdings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vertical.js"></script>
+</body>
+</html>

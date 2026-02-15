@@ -40,6 +40,13 @@
         linear-gradient(180deg, #111a13 0%, #16301a 40%, #1a3a1c 100%);
 }
 
+.vertical-hero__bg--field {
+    background:
+        radial-gradient(ellipse at 50% 40%, rgba(27, 94, 32, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 25% 70%, rgba(200, 169, 81, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #0e1c10 0%, #142a16 40%, #1a3a1c 100%);
+}
+
 .vertical-hero__overlay {
     position: absolute;
     inset: 0;
@@ -199,6 +206,76 @@
     color: var(--text-light);
     font-size: 0.98rem;
     line-height: 1.8;
+}
+
+/* --- Tools Grid (Field Services) --- */
+.vertical-tools {
+    background: var(--cream-warm);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.tool-card {
+    background: var(--white);
+    padding: 36px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.tool-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--jade-mid), var(--gold));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.tool-card:hover::after {
+    transform: scaleX(1);
+}
+
+.tool-card__icon {
+    color: var(--jade-mid);
+    margin-bottom: 18px;
+}
+
+.tool-card__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+}
+
+.tool-card__desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Stats Bar --- */
