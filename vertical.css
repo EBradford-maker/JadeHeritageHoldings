@@ -47,6 +47,13 @@
         linear-gradient(180deg, #0e1c10 0%, #142a16 40%, #1a3a1c 100%);
 }
 
+.vertical-hero__bg--field-services {
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(27, 94, 32, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 25% 70%, rgba(200, 169, 81, 0.12) 0%, transparent 50%),
+        linear-gradient(180deg, #0e1b11 0%, #142a17 40%, #1a3a1c 100%);
+}
+
 .vertical-hero__overlay {
     position: absolute;
     inset: 0;
@@ -487,6 +494,65 @@
     color: var(--white);
 }
 
+/* --- Tools Grid --- */
+.vertical-tools {
+    background: var(--cream);
+}
+
+.vertical-tools__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.tool-card {
+    background: var(--white);
+    padding: 36px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--jade-mid));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+}
+
+.tool-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tool-card__icon {
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.tool-card__title {
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+}
+
+.tool-card__desc {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
 /* ============================================================
    Responsive
    ============================================================ */
@@ -528,6 +594,16 @@
     .vertical-cta__buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .vertical-tools__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .vertical-tools__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
