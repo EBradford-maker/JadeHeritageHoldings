@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software for Professional Services — Jade Heritage Holdings</title>
+    <meta name="description" content="We build custom tools for accounting firms, law offices, and agencies who've outgrown off-the-shelf software.">
+    <meta property="og:title" content="Custom Software for Professional Services — Jade Heritage Holdings">
+    <meta property="og:description" content="Technology that works as hard as you do. Custom software and AI solutions for professional services.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vertical.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav nav--scrolled" id="navbar">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="index.html#about" class="nav__link">About</a>
+                <a href="index.html#services" class="nav__link">Services</a>
+                <a href="index.html#portfolio" class="nav__link">Portfolio</a>
+                <a href="assessment.html" class="nav__link">Assessment</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__links">
+            <a href="index.html" class="mobile-menu__link">Home</a>
+            <a href="index.html#about" class="mobile-menu__link">About</a>
+            <a href="index.html#services" class="mobile-menu__link">Services</a>
+            <a href="index.html#portfolio" class="mobile-menu__link">Portfolio</a>
+            <a href="assessment.html" class="mobile-menu__link">Assessment</a>
+            <a href="index.html#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="vertical-hero">
+        <div class="vertical-hero__bg vertical-hero__bg--services"></div>
+        <div class="vertical-hero__overlay"></div>
+        <!-- SVG Pattern -->
+        <svg class="vertical-hero__pattern" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="svcPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <rect x="5" y="5" width="50" height="50" rx="2" fill="none" stroke="rgba(200,169,81,0.04)" stroke-width="0.5"/>
+                    <line x1="15" y1="20" x2="45" y2="20" stroke="rgba(200,169,81,0.04)" stroke-width="0.5"/>
+                    <line x1="15" y1="30" x2="40" y2="30" stroke="rgba(200,169,81,0.03)" stroke-width="0.5"/>
+                    <line x1="15" y1="40" x2="35" y2="40" stroke="rgba(200,169,81,0.03)" stroke-width="0.5"/>
+                </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#svcPattern)"/>
+        </svg>
+        <div class="vertical-hero__content">
+            <div class="section__label" style="justify-content: center;">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Professional Services</span>
+                <span class="section__label-line"></span>
+            </div>
+            <h1 class="vertical-hero__title">Technology That Works As Hard As You Do</h1>
+            <p class="vertical-hero__subtitle">We build custom tools for accounting firms, law offices, and agencies who've outgrown off-the-shelf software.</p>
+            <a href="assessment.html" class="btn btn--gold">Take the AI Readiness Assessment</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="section vertical-pain">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">The Challenge</span>
+            </div>
+            <h2 class="section__title reveal">Sound Familiar?</h2>
+            <div class="gold-divider reveal"></div>
+            <p class="vertical-pain__intro reveal">Professional services firms face a unique technology dilemma: generic tools can't handle your complexity, but enterprise solutions are overkill and overpriced. Here's what we hear most.</p>
+            <div class="vertical-pain__grid">
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Outgrown Your Tools</h3>
+                    <p class="pain-card__desc">QuickBooks was great when you were a 5-person firm. Now you're at 30 and it's holding you back. Your team is building workarounds on top of workarounds, and the duct tape is showing.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Client Communication Gaps</h3>
+                    <p class="pain-card__desc">Clients expect instant updates and proactive communication. But when your team is juggling email threads, phone calls, and three different portals, things slip through the cracks — and client trust erodes.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Manual Billing & Reporting</h3>
+                    <p class="pain-card__desc">Your most valuable people are spending hours on timesheets, invoice generation, and report compilation. That's billable time burned on non-billable work — and it adds up to thousands of dollars every month.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Data Scattered Everywhere</h3>
+                    <p class="pain-card__desc">Client files in Dropbox, notes in email, financials in QuickBooks, tasks in Asana, contacts in Outlook. Your data lives in a dozen places, and getting a complete picture of any client or project requires a scavenger hunt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section vertical-solutions">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Our Approach</span>
+            </div>
+            <h2 class="section__title reveal">How We Help Professional Services Firms Excel</h2>
+            <div class="gold-divider reveal"></div>
+            <div class="solutions-grid">
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">01</div>
+                    <div class="solution-item__content">
+                        <h3>Custom Software Development</h3>
+                        <p>We build platforms tailored to your exact workflows — whether that's a client portal, a practice management system, or a custom CRM. No compromises, no workarounds. Software that fits like it was made for you, because it was.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">02</div>
+                    <div class="solution-item__content">
+                        <h3>AI Document Processing</h3>
+                        <p>Stop manually extracting data from documents. Our AI solutions can read, categorize, and process contracts, invoices, tax documents, and client correspondence — reducing data entry by 80% or more.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">03</div>
+                    <div class="solution-item__content">
+                        <h3>Process Improvement</h3>
+                        <p>We analyze your firm's workflows end-to-end and identify where time is being wasted, where errors creep in, and where automation can free your team to focus on high-value client work.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">04</div>
+                    <div class="solution-item__content">
+                        <h3>System Integration & Migration</h3>
+                        <p>Already have tools you love? We connect them. Need to upgrade? We handle the migration without disrupting your practice. One unified view of your clients, projects, and financials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="vertical-stats">
+        <div class="container">
+            <div class="vertical-stats__inner reveal">
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">15hrs</div>
+                    <div class="vertical-stat__label">Average weekly time savings per firm</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">80%</div>
+                    <div class="vertical-stat__label">Reduction in manual data entry</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">3.5x</div>
+                    <div class="vertical-stat__label">Average ROI within the first year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section vertical-case">
+        <div class="container">
+            <div class="vertical-case__card reveal">
+                <div class="section__label">
+                    <span class="section__label-line"></span>
+                    <span class="section__label-text">Case Study</span>
+                </div>
+                <h2 class="vertical-case__title">How a 30-Person Accounting Firm Eliminated 80% of Manual Data Entry</h2>
+                <div class="gold-divider"></div>
+                <div class="vertical-case__grid">
+                    <div class="vertical-case__challenge">
+                        <h4>The Challenge</h4>
+                        <p>A growing CPA firm was losing senior associates to burnout. With 200+ clients, tax season meant 70-hour weeks — not because of complex accounting work, but because of manual data entry, document sorting, and report generation. The managing partner estimated that 40% of their time during peak season was spent on tasks that "a computer should be doing."</p>
+                    </div>
+                    <div class="vertical-case__solution">
+                        <h4>Our Solution</h4>
+                        <p>We built a custom AI-powered document processing pipeline that could ingest client documents (W-2s, 1099s, bank statements, receipts), extract relevant data using machine learning, categorize it automatically, and pre-populate their tax preparation software. We also built a client portal for secure document upload and real-time status updates, eliminating hundreds of "where's my return?" phone calls.</p>
+                    </div>
+                    <div class="vertical-case__results">
+                        <h4>The Results</h4>
+                        <ul>
+                            <li>Manual data entry reduced by 80% across the firm</li>
+                            <li>Average return preparation time dropped from 4.5 hours to 1.8 hours</li>
+                            <li>Client satisfaction scores improved 34%</li>
+                            <li>Staff overtime reduced by 60% during tax season</li>
+                            <li>The firm onboarded 45 new clients without adding headcount</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="section vertical-testimonial">
+        <div class="container">
+            <div class="vertical-testimonial__card reveal">
+                <svg class="vertical-testimonial__quote" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                <p class="vertical-testimonial__text">I've been in public accounting for 22 years, and this is the single biggest improvement to our practice I've ever seen. Our team went from dreading tax season to feeling in control. We're doing better work, our clients are happier, and for the first time in years, my senior associates aren't threatening to quit in April.</p>
+                <div class="vertical-testimonial__author">
+                    <div class="vertical-testimonial__avatar">DK</div>
+                    <div>
+                        <div class="vertical-testimonial__name">David Kim</div>
+                        <div class="vertical-testimonial__role">Managing Partner, Kim & Associates CPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section vertical-cta-section">
+        <div class="container">
+            <div class="vertical-cta__inner reveal">
+                <h2 class="vertical-cta__title">Ready to Upgrade Your Practice?</h2>
+                <p class="vertical-cta__desc">Your firm deserves technology that matches your expertise. Take our free assessment to see where AI and custom software can make the biggest impact, or schedule a conversation with our team.</p>
+                <div class="vertical-cta__buttons">
+                    <a href="assessment.html" class="btn btn--gold">Take the AI Assessment</a>
+                    <a href="index.html#contact" class="btn vertical-cta__outline">Schedule a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/logo.png" alt="Jade Heritage Holdings" class="footer__logo">
+                    <p class="footer__tagline">Helping families continue their business legacy and excel into the future.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="assessment.html">Assessment</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer__links">
+                    <h4>Industries</h4>
+                    <a href="manufacturing.html">Manufacturing</a>
+                    <a href="logistics.html">Logistics &amp; Import/Export</a>
+                    <a href="professional-services.html">Professional Services</a>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>info@jadeheritageholdings.com</p>
+                    <p>(800) 555-0199</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Jade Heritage Holdings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vertical.js"></script>
+</body>
+</html>

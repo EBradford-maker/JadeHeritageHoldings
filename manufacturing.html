@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Automation for Manufacturing — Jade Heritage Holdings</title>
+    <meta name="description" content="From the factory floor to the front office, we help manufacturers eliminate waste, automate processes, and compete in the age of AI.">
+    <meta property="og:title" content="AI & Automation for Manufacturing — Jade Heritage Holdings">
+    <meta property="og:description" content="Modernize your manufacturing operations with AI, automation, and process improvement.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vertical.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav nav--scrolled" id="navbar">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="index.html#about" class="nav__link">About</a>
+                <a href="index.html#services" class="nav__link">Services</a>
+                <a href="index.html#portfolio" class="nav__link">Portfolio</a>
+                <a href="assessment.html" class="nav__link">Assessment</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__links">
+            <a href="index.html" class="mobile-menu__link">Home</a>
+            <a href="index.html#about" class="mobile-menu__link">About</a>
+            <a href="index.html#services" class="mobile-menu__link">Services</a>
+            <a href="index.html#portfolio" class="mobile-menu__link">Portfolio</a>
+            <a href="assessment.html" class="mobile-menu__link">Assessment</a>
+            <a href="index.html#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero -->
+    <section class="vertical-hero">
+        <div class="vertical-hero__bg vertical-hero__bg--manufacturing"></div>
+        <div class="vertical-hero__overlay"></div>
+        <!-- SVG Pattern -->
+        <svg class="vertical-hero__pattern" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="mfgPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                    <path d="M0 40 L20 20 L20 0 L30 0 L30 20 L50 40 L50 20 L60 20 L60 0 L70 0 L70 20 L80 30 L80 40 L60 40 L60 60 L80 80 L0 80 L20 60 L20 40 Z" fill="none" stroke="rgba(200,169,81,0.06)" stroke-width="0.5"/>
+                    <circle cx="25" cy="25" r="2" fill="rgba(200,169,81,0.04)"/>
+                    <circle cx="65" cy="65" r="2" fill="rgba(200,169,81,0.04)"/>
+                </pattern>
+            </defs>
+            <rect width="400" height="400" fill="url(#mfgPattern)"/>
+        </svg>
+        <div class="vertical-hero__content">
+            <div class="section__label" style="justify-content: center;">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Manufacturing</span>
+                <span class="section__label-line"></span>
+            </div>
+            <h1 class="vertical-hero__title">Modernize Your Manufacturing Operations</h1>
+            <p class="vertical-hero__subtitle">From the factory floor to the front office, we help manufacturers eliminate waste, automate processes, and compete in the age of AI.</p>
+            <a href="assessment.html" class="btn btn--gold">Take the AI Readiness Assessment</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="section vertical-pain">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">The Challenge</span>
+            </div>
+            <h2 class="section__title reveal">Sound Familiar?</h2>
+            <div class="gold-divider reveal"></div>
+            <p class="vertical-pain__intro reveal">Manufacturing is evolving faster than ever. If any of these challenges resonate, you're not alone — and you're in the right place.</p>
+            <div class="vertical-pain__grid">
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Manual Production Tracking</h3>
+                    <p class="pain-card__desc">Spreadsheets, whiteboards, and paper logs can't keep up with the pace of modern manufacturing. Lack of real-time visibility means problems are discovered too late and opportunities are missed entirely.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Quality Control Inconsistencies</h3>
+                    <p class="pain-card__desc">Without standardized, automated quality checks, defect rates creep up, customer complaints increase, and rework costs eat into margins. Consistency shouldn't depend on who's on shift.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Inventory Management Headaches</h3>
+                    <p class="pain-card__desc">Too much stock ties up cash. Too little halts production. Without intelligent forecasting and real-time tracking, you're always guessing — and guessing wrong is expensive.</p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-card__icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="pain-card__title">Rising Labor Costs</h3>
+                    <p class="pain-card__desc">Finding and keeping skilled workers gets harder every year. Labor costs are rising, and relying on manual processes means every absence, every mistake, and every turnover event hits harder than it should.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section vertical-solutions">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Our Approach</span>
+            </div>
+            <h2 class="section__title reveal">How We Help Manufacturers Thrive</h2>
+            <div class="gold-divider reveal"></div>
+            <div class="solutions-grid">
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">01</div>
+                    <div class="solution-item__content">
+                        <h3>Process Improvement & Lean Transformation</h3>
+                        <p>We map your entire production workflow, identify bottlenecks, and redesign processes using lean methodology. The result: less waste, faster throughput, and higher output from the same resources.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">02</div>
+                    <div class="solution-item__content">
+                        <h3>AI-Powered Quality Systems</h3>
+                        <p>We implement intelligent quality monitoring that catches defects in real time, tracks trends across production runs, and gives you the data to continuously improve. Stop reacting and start preventing.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">03</div>
+                    <div class="solution-item__content">
+                        <h3>Smart Inventory & Supply Chain</h3>
+                        <p>AI-driven demand forecasting, automated reorder triggers, and real-time inventory dashboards mean you always have what you need — and never pay for what you don't.</p>
+                    </div>
+                </div>
+                <div class="solution-item reveal">
+                    <div class="solution-item__number">04</div>
+                    <div class="solution-item__content">
+                        <h3>Custom Manufacturing Software</h3>
+                        <p>Off-the-shelf ERP doesn't fit every shop floor. We build custom tools that integrate with your equipment, match your workflows, and scale with your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="vertical-stats">
+        <div class="container">
+            <div class="vertical-stats__inner reveal">
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">32%</div>
+                    <div class="vertical-stat__label">Average reduction in operational waste</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">3x</div>
+                    <div class="vertical-stat__label">Faster defect detection with AI quality systems</div>
+                </div>
+                <div class="vertical-stat">
+                    <div class="vertical-stat__number">$120K</div>
+                    <div class="vertical-stat__label">Average annual savings for mid-size manufacturers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="section vertical-case">
+        <div class="container">
+            <div class="vertical-case__card reveal">
+                <div class="section__label">
+                    <span class="section__label-line"></span>
+                    <span class="section__label-text">Case Study</span>
+                </div>
+                <h2 class="vertical-case__title">How a 45-Person Manufacturer Saved $120K/Year</h2>
+                <div class="gold-divider"></div>
+                <div class="vertical-case__grid">
+                    <div class="vertical-case__challenge">
+                        <h4>The Challenge</h4>
+                        <p>A mid-size precision parts manufacturer was drowning in manual processes. Inventory was tracked on spreadsheets updated once a day. Quality checks were inconsistent across shifts, leading to a 6% defect rate and growing customer complaints. The production manager was spending 15 hours a week just compiling reports.</p>
+                    </div>
+                    <div class="vertical-case__solution">
+                        <h4>Our Solution</h4>
+                        <p>We implemented a three-phase transformation: First, a custom inventory management system with real-time tracking and AI-powered demand forecasting. Second, automated quality checkpoints with sensor integration that flagged defects in real time. Third, an executive dashboard that compiled production data automatically.</p>
+                    </div>
+                    <div class="vertical-case__results">
+                        <h4>The Results</h4>
+                        <ul>
+                            <li>Defect rate dropped from 6% to 1.8% within 4 months</li>
+                            <li>Inventory carrying costs reduced by 28%</li>
+                            <li>Production manager reclaimed 12+ hours per week</li>
+                            <li>Total annual savings: $120,000+</li>
+                            <li>ROI achieved in under 5 months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="section vertical-testimonial">
+        <div class="container">
+            <div class="vertical-testimonial__card reveal">
+                <svg class="vertical-testimonial__quote" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                <p class="vertical-testimonial__text">Jade Heritage didn't just give us new software — they transformed how we think about our operations. The ROI was undeniable, but what surprised us most was how quickly our team embraced the changes. Production runs smoother, quality is consistent, and I finally have real data to make decisions with.</p>
+                <div class="vertical-testimonial__author">
+                    <div class="vertical-testimonial__avatar">RM</div>
+                    <div>
+                        <div class="vertical-testimonial__name">Robert Mitchell</div>
+                        <div class="vertical-testimonial__role">Operations Director, Precision Parts Manufacturing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section vertical-cta-section">
+        <div class="container">
+            <div class="vertical-cta__inner reveal">
+                <h2 class="vertical-cta__title">Ready to Modernize Your Manufacturing?</h2>
+                <p class="vertical-cta__desc">Take our free AI Readiness Assessment to discover exactly where automation and AI can make the biggest impact on your operations — or reach out directly for a no-obligation consultation.</p>
+                <div class="vertical-cta__buttons">
+                    <a href="assessment.html" class="btn btn--gold">Take the AI Assessment</a>
+                    <a href="index.html#contact" class="btn vertical-cta__outline">Schedule a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/logo.png" alt="Jade Heritage Holdings" class="footer__logo">
+                    <p class="footer__tagline">Helping families continue their business legacy and excel into the future.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#portfolio">Portfolio</a>
+                    <a href="assessment.html">Assessment</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer__links">
+                    <h4>Industries</h4>
+                    <a href="manufacturing.html">Manufacturing</a>
+                    <a href="logistics.html">Logistics &amp; Import/Export</a>
+                    <a href="professional-services.html">Professional Services</a>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>info@jadeheritageholdings.com</p>
+                    <p>(800) 555-0199</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Jade Heritage Holdings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vertical.js"></script>
+</body>
+</html>
