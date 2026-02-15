@@ -1,0 +1,10 @@
+{
+  "name": "jade-heritage-holdings",
+  "version": "1.0.0",
+  "description": "Jade Heritage Holdings — Corporate website",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve ."
+  },
+  "private": true
+}

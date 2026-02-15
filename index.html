@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jade Heritage Holdings — Building Legacies. Solving Real Problems.</title>
+    <meta name="description" content="Jade Heritage Holdings is a portfolio of businesses dedicated to helping small and medium companies thrive through process improvement, quality assurance, AI implementation, and more.">
+    <meta property="og:title" content="Jade Heritage Holdings">
+    <meta property="og:description" content="Building Legacies. Solving Real Problems. A portfolio of businesses dedicated to helping small and medium companies thrive.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav" id="navbar">
+        <div class="nav__container">
+            <a href="#home" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="#home" class="nav__link">Home</a>
+                <a href="#about" class="nav__link">About</a>
+                <a href="#services" class="nav__link">Services</a>
+                <a href="#portfolio" class="nav__link">Portfolio</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__links">
+            <a href="#home" class="mobile-menu__link">Home</a>
+            <a href="#about" class="mobile-menu__link">About</a>
+            <a href="#services" class="mobile-menu__link">Services</a>
+            <a href="#portfolio" class="mobile-menu__link">Portfolio</a>
+            <a href="#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__bg"></div>
+        <div class="hero__overlay"></div>
+        <img src="assets/logo.png" alt="" class="hero__watermark" aria-hidden="true">
+        <div class="hero__content">
+            <h1 class="hero__title animate-fade-in">Building Legacies.<br>Solving Real Problems.</h1>
+            <p class="hero__subtitle animate-fade-in">Helping family-owned businesses adapt, modernize, and build legacies that last generations.</p>
+            <a href="#services" class="btn btn--gold hero__cta animate-fade-in">Explore Our Services</a>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">About Us</span>
+            </div>
+            <div class="about__grid">
+                <div class="about__content reveal">
+                    <h2 class="section__title">Who We Are</h2>
+                    <div class="gold-divider"></div>
+                    <p class="about__lead">Jade Heritage Holdings is more than a company. It's a commitment to the families and communities behind the businesses that drive our economy.</p>
+                    <p>We understand that most small and medium businesses are family-owned. They were built with sacrifice, grit, and a dream of creating something that lasts. We take immense pride in helping these families continue their business legacy. Not just survive, but thrive in the face of rapid, relentless change. The world is moving fast: new technology, shifting markets, evolving regulations. We're here to make sure the businesses that form the backbone of our communities don't get left behind.</p>
+                    <p>Through our portfolio of specialized companies, we help family-owned and founder-led businesses adapt, modernize, and excel into the future. Whether it's streamlining operations with AI, breaking into international markets, or building the quality systems that earn lasting trust, we bring the resources of a holdings group with the care and attention of a family partner. Because your legacy matters to us.</p>
+                </div>
+                <div class="about__visual reveal">
+                    <div class="about__decorative">
+                        <div class="about__decorative-border"></div>
+                        <div class="about__decorative-inner">
+                            <div class="about__values-grid">
+                                <div class="about__value">
+                                    <div class="about__value-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    </div>
+                                    <h4>Integrity</h4>
+                                </div>
+                                <div class="about__value">
+                                    <div class="about__value-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                                    </div>
+                                    <h4>Innovation</h4>
+                                </div>
+                                <div class="about__value">
+                                    <div class="about__value-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    </div>
+                                    <h4>Impact</h4>
+                                </div>
+                                <div class="about__value">
+                                    <div class="about__value-icon">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    </div>
+                                    <h4>Heritage</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about__stats reveal">
+                <div class="stat">
+                    <div class="stat__number" data-target="150">0</div>
+                    <div class="stat__suffix">+</div>
+                    <div class="stat__label">Businesses Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number" data-target="12">0</div>
+                    <div class="stat__suffix"></div>
+                    <div class="stat__label">Industries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number" data-target="15">0</div>
+                    <div class="stat__suffix">+</div>
+                    <div class="stat__label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat__number" data-target="6">0</div>
+                    <div class="stat__suffix"></div>
+                    <div class="stat__label">Portfolio Companies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Our Expertise</span>
+            </div>
+            <h2 class="section__title section__title--center reveal">What We Do</h2>
+            <div class="gold-divider gold-divider--center reveal"></div>
+            <p class="section__intro reveal">Our portfolio companies deliver specialized solutions across six core disciplines, each one designed to help your business operate smarter, grow faster, and compete harder.</p>
+            <div class="services__grid">
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Process Improvement</h3>
+                    <p class="service-card__desc">We identify bottlenecks, eliminate waste, and redesign workflows to help your team do more with less. From lean methodology to custom process engineering, we streamline operations so you can focus on what matters: growing your business.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Quality Assurance</h3>
+                    <p class="service-card__desc">Establish rigorous quality standards, compliance frameworks, and QA systems that protect your reputation and ensure consistency. We build the quality infrastructure that turns first-time customers into lifelong advocates.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                    </div>
+                    <h3 class="service-card__title">AI &amp; Automation</h3>
+                    <p class="service-card__desc">The future is here. We implement practical AI solutions and intelligent automation that modernize your operations, reduce manual effort, and unlock insights hidden in your data. No hype, just results.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Import/Export Solutions</h3>
+                    <p class="service-card__desc">Navigate the complexities of global trade with confidence. Our team provides expert guidance on logistics, customs compliance, supplier management, and international market entry, turning global ambition into operational reality.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Business Marketing</h3>
+                    <p class="service-card__desc">Great products deserve to be seen. We craft strategic marketing programs that build brand authority, generate qualified leads, and drive measurable growth through digital campaigns, brand positioning, and market research.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-card__icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+                    </div>
+                    <h3 class="service-card__title">Custom Software Development</h3>
+                    <p class="service-card__desc">Every business has unique needs. We build custom tools, applications, and platforms tailored to your exact workflows. We also integrate with and support your existing tech stack so your technology works for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Companies</span>
+            </div>
+            <h2 class="section__title section__title--center reveal">Our Portfolio</h2>
+            <div class="gold-divider gold-divider--center reveal"></div>
+            <p class="section__intro reveal">Each company in our portfolio was chosen for its ability to deliver exceptional value in a specific domain. Together, they form an ecosystem of expertise.</p>
+            <div class="portfolio__grid">
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Process &amp; Operations</div>
+                    <h3 class="portfolio-card__name">Meridian Process Co.</h3>
+                    <p class="portfolio-card__desc">Operational excellence consulting for manufacturing and logistics firms seeking lean transformation.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Quality &amp; Compliance</div>
+                    <h3 class="portfolio-card__name">Apex Standards Group</h3>
+                    <p class="portfolio-card__desc">ISO certification, compliance auditing, and quality management systems for regulated industries.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Technology &amp; AI</div>
+                    <h3 class="portfolio-card__name">NovaMind AI</h3>
+                    <p class="portfolio-card__desc">Applied artificial intelligence and machine learning solutions for mid-market enterprises.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Global Trade</div>
+                    <h3 class="portfolio-card__name">Pacific Corridor Trading</h3>
+                    <p class="portfolio-card__desc">Full-service import/export facilitation with a focus on Asia-Pacific and North American trade routes.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Marketing &amp; Brand</div>
+                    <h3 class="portfolio-card__name">Greenlight Marketing</h3>
+                    <p class="portfolio-card__desc">Performance-driven marketing agency specializing in B2B growth strategy and digital campaigns.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__tag">Software Development</div>
+                    <h3 class="portfolio-card__name">Jade Digital Solutions</h3>
+                    <p class="portfolio-card__desc">Custom software development, legacy system modernization, and ongoing tech support for growing businesses.</p>
+                </div>
+            </div>
+            <p class="portfolio__growing reveal">And growing&hellip;</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section differentiators">
+        <div class="container">
+            <h2 class="section__title section__title--center reveal">Why Jade Heritage</h2>
+            <div class="gold-divider gold-divider--center reveal"></div>
+            <div class="diff__grid">
+                <div class="diff-card reveal">
+                    <div class="diff-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3 class="diff-card__title">Heritage of Excellence</h3>
+                    <p class="diff-card__desc">Built on principles that have guided successful enterprises for generations. Our foundation is trust, discipline, and an unwavering commitment to doing things right, not just doing things fast. When you partner with Jade Heritage, you partner with a legacy.</p>
+                </div>
+                <div class="diff-card reveal">
+                    <div class="diff-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                    </div>
+                    <h3 class="diff-card__title">Modern Solutions</h3>
+                    <p class="diff-card__desc">We pair timeless business principles with cutting-edge technology and methodology. From AI-driven analytics to agile process design, our portfolio companies bring the best of modern innovation to every engagement. Tradition meets transformation.</p>
+                </div>
+                <div class="diff-card reveal">
+                    <div class="diff-card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                    </div>
+                    <h3 class="diff-card__title">Proven Results</h3>
+                    <p class="diff-card__desc">Our track record speaks for itself. Across 150+ engagements in 12 industries, our portfolio companies consistently deliver measurable outcomes: reduced costs, accelerated growth, stronger compliance, and operations that simply work better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section__label reveal">
+                <span class="section__label-line"></span>
+                <span class="section__label-text">Reach Out</span>
+            </div>
+            <h2 class="section__title reveal">Get In Touch</h2>
+            <div class="gold-divider reveal"></div>
+            <div class="contact__grid">
+                <div class="contact__form-wrap reveal">
+                    <form class="contact-form" id="contactForm">
+                        <div class="contact-form__group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company Name">
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or challenge..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--gold btn--full">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact__info reveal">
+                    <div class="contact__info-block">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@jadeheritageholdings.com">info@jadeheritageholdings.com</a></p>
+                    </div>
+                    <div class="contact__info-block">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+18005550199">(800) 555-0199</a></p>
+                    </div>
+                    <div class="contact__info-block">
+                        <h4>Business Hours</h4>
+                        <p>Monday – Friday: 8:00 AM – 6:00 PM CST<br>Saturday – Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/logo.png" alt="Jade Heritage Holdings" class="footer__logo">
+                    <p class="footer__tagline">Helping families continue their business legacy and excel into the future.</p>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>info@jadeheritageholdings.com</p>
+                    <p>(800) 555-0199</p>
+                </div>
+                <div class="footer__social">
+                    <h4>Connect</h4>
+                    <div class="footer__social-icons">
+                        <a href="#" aria-label="LinkedIn" class="footer__social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="footer__social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="footer__social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Jade Heritage Holdings. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
