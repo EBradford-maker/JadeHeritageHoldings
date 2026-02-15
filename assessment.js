@@ -415,16 +415,50 @@
             recsList.appendChild(card);
         });
 
-        // Save to localStorage
-        var data = {
-            answers: answers,
+        // Build lead data for CRM
+        var leadData = {
+            name: answers.lead ? answers.lead.name : '',
+            email: answers.lead ? answers.lead.email : '',
+            company: answers.lead ? answers.lead.company : '',
+            phone: answers.lead ? answers.lead.phone : '',
+            industry: answers[1] || '',
+            employees: answers[2] || '',
+            techLevel: answers[3] || '',
+            manualHours: answers[4] || '',
+            aiAdoption: answers[5] || '',
+            challenges: answers[6] || [],
+            customerHandling: answers[7] || '',
+            revenue: answers[8] || '',
+            techOpenness: answers[9] || '',
+            goals: answers[10] || [],
             score: score,
+            category: score <= 25 ? 'Early Stage' : score <= 50 ? 'Building Foundation' : score <= 75 ? 'Ready to Scale' : 'Innovation Leader',
             timestamp: new Date().toISOString()
         };
+
+        // Save to localStorage as backup
         try {
-            localStorage.setItem('jhh_assessment', JSON.stringify(data));
+            localStorage.setItem('jhh_assessment', JSON.stringify(leadData));
         } catch (e) {
             // localStorage not available
+        }
+
+        // Send to Google Apps Script CRM
+        // REPLACE THIS URL after deploying the Google Apps Script
+        var GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        
+        if (GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+            try {
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(leadData)
+                });
+            } catch (e) {
+                // Silently fail — localStorage has the backup
+                console.log('CRM submission failed:', e);
+            }
         }
 
         // Scroll to top of results
