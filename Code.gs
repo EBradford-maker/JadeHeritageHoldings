@@ -1,60 +1,11 @@
 var SHEET_NAME = 'JHH Assessment Leads';
 var NOTIFY_EMAIL = 'Ethan.Bradford88@gmail.com';
 
-function doGet(e) {
-  var p = e.parameter;
-  if (!p.name) {
-    return ContentService
-      .createTextOutput(JSON.stringify({status: 'ok'}))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-  try {
-    var ss = getOrCreateSpreadsheet();
-    var sheet = ss.getSheets()[0];
-    var row = [
-      new Date(),
-      p.name || '',
-      p.email || '',
-      p.company || '',
-      p.phone || '',
-      p.industry || '',
-      p.employees || '',
-      p.techLevel || '',
-      p.manualHours || '',
-      p.aiAdoption || '',
-      p.challenges || '',
-      p.customerHandling || '',
-      p.revenue || '',
-      p.techOpenness || '',
-      p.goals || '',
-      p.score || 0,
-      p.category || ''
-    ];
-    sheet.appendRow(row);
-    sendNotificationEmail(p);
-    return ContentService
-      .createTextOutput(JSON.stringify({success: true}))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (error) {
-    return ContentService
-      .createTextOutput(JSON.stringify({success: false}))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-
 function doPost(e) {
   try {
-    var data = JSON.parse(e.postData.contents);
+    var data = e.parameter;
     var ss = getOrCreateSpreadsheet();
     var sheet = ss.getSheets()[0];
-    var ch = '';
-    if (Array.isArray(data.challenges)) {
-      ch = data.challenges.join(', ');
-    }
-    var go = '';
-    if (Array.isArray(data.goals)) {
-      go = data.goals.join(', ');
-    }
     var row = [
       new Date(),
       data.name || '',
@@ -66,24 +17,30 @@ function doPost(e) {
       data.techLevel || '',
       data.manualHours || '',
       data.aiAdoption || '',
-      ch,
+      data.challenges || '',
       data.customerHandling || '',
       data.revenue || '',
       data.techOpenness || '',
-      go,
+      data.goals || '',
       data.score || 0,
       data.category || ''
     ];
     sheet.appendRow(row);
     sendNotificationEmail(data);
     return ContentService
-      .createTextOutput(JSON.stringify({success: true}))
-      .setMimeType(ContentService.MimeType.JSON);
+      .createTextOutput('OK')
+      .setMimeType(ContentService.MimeType.TEXT);
   } catch (error) {
     return ContentService
-      .createTextOutput(JSON.stringify({success: false}))
-      .setMimeType(ContentService.MimeType.JSON);
+      .createTextOutput('ERROR: ' + error.toString())
+      .setMimeType(ContentService.MimeType.TEXT);
   }
+}
+
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({status: 'ok'}))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 function getOrCreateSpreadsheet() {

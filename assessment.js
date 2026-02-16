@@ -449,14 +449,29 @@
         
         if (GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
             try {
-                var params = new URLSearchParams();
+                var iframe = document.createElement('iframe');
+                iframe.name = 'crm_iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = GOOGLE_SCRIPT_URL;
+                form.target = 'crm_iframe';
                 Object.keys(leadData).forEach(function(key) {
                     var val = leadData[key];
                     if (Array.isArray(val)) val = val.join(', ');
-                    params.append(key, val);
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = val;
+                    form.appendChild(input);
                 });
-                var img = new Image();
-                img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
+                document.body.appendChild(form);
+                form.submit();
+                setTimeout(function() {
+                    form.remove();
+                    iframe.remove();
+                }, 5000);
             } catch (e) {
                 console.log('CRM submission failed:', e);
             }
