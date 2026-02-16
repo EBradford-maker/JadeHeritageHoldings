@@ -1,6 +1,47 @@
 var SHEET_NAME = 'JHH Assessment Leads';
 var NOTIFY_EMAIL = 'Ethan.Bradford88@gmail.com';
 
+function doGet(e) {
+  var p = e.parameter;
+  if (!p.name) {
+    return ContentService
+      .createTextOutput(JSON.stringify({status: 'ok'}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  try {
+    var ss = getOrCreateSpreadsheet();
+    var sheet = ss.getSheets()[0];
+    var row = [
+      new Date(),
+      p.name || '',
+      p.email || '',
+      p.company || '',
+      p.phone || '',
+      p.industry || '',
+      p.employees || '',
+      p.techLevel || '',
+      p.manualHours || '',
+      p.aiAdoption || '',
+      p.challenges || '',
+      p.customerHandling || '',
+      p.revenue || '',
+      p.techOpenness || '',
+      p.goals || '',
+      p.score || 0,
+      p.category || ''
+    ];
+    sheet.appendRow(row);
+    sendNotificationEmail(p);
+    return ContentService
+      .createTextOutput(JSON.stringify({success: true}))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({success: false}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
@@ -35,20 +76,14 @@ function doPost(e) {
     ];
     sheet.appendRow(row);
     sendNotificationEmail(data);
-    var out = JSON.stringify({success: true});
-    var resp = ContentService.createTextOutput(out);
-    return resp.setMimeType(ContentService.MimeType.JSON);
+    return ContentService
+      .createTextOutput(JSON.stringify({success: true}))
+      .setMimeType(ContentService.MimeType.JSON);
   } catch (error) {
-    var err = JSON.stringify({success: false});
-    var resp2 = ContentService.createTextOutput(err);
-    return resp2.setMimeType(ContentService.MimeType.JSON);
+    return ContentService
+      .createTextOutput(JSON.stringify({success: false}))
+      .setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-function doGet(e) {
-  var out = JSON.stringify({status: 'ok'});
-  var resp = ContentService.createTextOutput(out);
-  return resp.setMimeType(ContentService.MimeType.JSON);
 }
 
 function getOrCreateSpreadsheet() {
