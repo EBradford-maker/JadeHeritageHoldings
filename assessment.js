@@ -445,18 +445,19 @@
 
         // Send to Google Apps Script CRM
         // REPLACE THIS URL after deploying the Google Apps Script
-        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/1gfCAQ7D2CpUUOmx4wMRL6oxPWNVYkE-l5qkJnZuyLh5pYwyPi3VqFief/exec';
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzuVWwBEJZGnXdV4E0Ypf9OI5L19cEZaD7ZnEeHYPHYyBSoAZOMJkpTZvmN6pSIYogt/exec';
         
         if (GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
             try {
-                fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(leadData)
+                var params = new URLSearchParams();
+                Object.keys(leadData).forEach(function(key) {
+                    var val = leadData[key];
+                    if (Array.isArray(val)) val = val.join(', ');
+                    params.append(key, val);
                 });
+                var img = new Image();
+                img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
             } catch (e) {
-                // Silently fail — localStorage has the backup
                 console.log('CRM submission failed:', e);
             }
         }
