@@ -595,8 +595,10 @@ h1, h2, h3, h4 {
 
 .services__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .service-card {
@@ -646,15 +648,10 @@ h1, h2, h3, h4 {
     line-height: 1.8;
 }
 
-@media (max-width: 1024px) {
-    .services__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .services__grid {
         grid-template-columns: 1fr;
+        max-width: 400px;
     }
 }
 
