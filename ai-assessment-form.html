@@ -193,6 +193,12 @@
             // Collect form data
             const formData = new FormData(this);
             
+            // Debug: Show what we're collecting
+            console.log('Form data being collected:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key + ': ' + value);
+            }
+            
             // Build URL-encoded data string
             const data = new URLSearchParams();
             data.append('type', 'AI_ASSESSMENT_REQUEST');
@@ -209,8 +215,15 @@
             data.append('additionalInfo', formData.get('additionalInfo') || 'None provided');
             data.append('timestamp', new Date().toISOString());
             
+            // Debug: Show data being sent (remove this later)
+            let debugInfo = 'Data being sent:\n';
+            for (let [key, value] of data.entries()) {
+                debugInfo += key + ': ' + value + '\n';
+            }
+            console.log(debugInfo);
+            
             // Send to Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbzO6edYQxLiSqvn_Sx8LC5fPzTNtovW314RubxynLkFEh8y6qBcykLPVJw1sBgIHKgq/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbyoEAFik5-9LPqj6ASz4ghifcQPQIfKbr8O0c5j5Yx4cpGaN_wTA2adVxa6a7cZhUqeVg/exec', {
                 method: 'POST',
                 body: data,
                 mode: 'no-cors'

@@ -445,7 +445,7 @@
 
         // Send to Google Apps Script CRM
         // REPLACE THIS URL after deploying the Google Apps Script
-        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO6edYQxLiSqvn_Sx8LC5fPzTNtovW314RubxynLkFEh8y6qBcykLPVJw1sBgIHKgq/exec';
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoEAFik5-9LPqj6ASz4ghifcQPQIfKbr8O0c5j5Yx4cpGaN_wTA2adVxa6a7cZhUqeVg/exec';
         
         if (GOOGLE_SCRIPT_URL !== 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
             try {
