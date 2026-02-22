@@ -3,72 +3,76 @@ var NOTIFY_EMAIL = 'Ethan.Bradford88@gmail.com';
 
 function doPost(e) {
   try {
-    // Handle both URL-encoded and JSON data
-    var data = {};
-    if (e.parameter) {
-      data = e.parameter;
-    } else if (e.postData && e.postData.contents) {
-      try {
-        data = JSON.parse(e.postData.contents);
-      } catch (parseError) {
-        data = e.parameter || {};
-      }
-    }
+    // Use e.parameter for form data (works with URLSearchParams)
+    var data = e.parameter || {};
+    
+    // Debug logging
+    Logger.log('Received form data: ' + JSON.stringify(data));
     
     var ss = getOrCreateSpreadsheet();
     var sheet = ss.getSheets()[0];
     
     // Check if this is an AI Assessment request vs regular assessment
     if (data.type === 'AI_ASSESSMENT_REQUEST') {
+      Logger.log('Processing AI Assessment Request for: ' + data.company);
+      
       // Handle AI Assessment Form
       var row = [
-        new Date(),
-        data.fullName || '',
-        data.email || '',
-        data.company || '',
-        data.phone || 'Not provided',
-        data.industry || 'Not specified',
-        data.companySize || '',
-        'AI Assessment Request',
-        data.aiExperience || 'Not specified',
-        data.timeline || 'Not specified',
-        data.challenges || '',
-        'Direct Form Submission',
-        'Not specified',
-        'Interested in AI',
-        data.additionalInfo || 'None',
-        'AI Request',
-        'AI Assessment Form'
+        new Date(),                              // Timestamp
+        data.fullName || 'Not provided',        // Full Name
+        data.email || 'Not provided',           // Email
+        data.company || 'Not provided',         // Company
+        data.phone || 'Not provided',           // Phone
+        data.industry || 'Not specified',       // Industry
+        data.companySize || 'Not specified',    // Company Size
+        'AI Assessment Request',                 // Tech Level
+        data.aiExperience || 'Not specified',   // AI Experience
+        data.timeline || 'Not specified',       // Timeline
+        data.challenges || 'Not specified',     // Challenges
+        'Direct Form Submission',               // Customer Handling
+        'Not specified',                        // Revenue
+        'Interested in AI',                     // Tech Openness
+        data.additionalInfo || 'None provided', // Goals/Additional Info
+        'AI Request',                           // Score
+        'AI Assessment Form'                    // Category
       ];
     } else {
+      Logger.log('Processing Regular Assessment for: ' + (data.company || data.name));
+      
       // Handle regular assessment form
       var row = [
         new Date(),
-        data.name || data.fullName || '',
-        data.email || '',
-        data.company || '',
-        data.phone || '',
-        data.industry || '',
-        data.employees || data.companySize || '',
-        data.techLevel || '',
-        data.manualHours || '',
-        data.aiAdoption || '',
-        data.challenges || '',
-        data.customerHandling || '',
-        data.revenue || '',
-        data.techOpenness || '',
-        data.goals || '',
+        data.name || data.fullName || 'Not provided',
+        data.email || 'Not provided',
+        data.company || 'Not provided',
+        data.phone || 'Not provided',
+        data.industry || 'Not specified',
+        data.employees || data.companySize || 'Not specified',
+        data.techLevel || 'Not specified',
+        data.manualHours || 'Not specified',
+        data.aiAdoption || 'Not specified',
+        data.challenges || 'Not specified',
+        data.customerHandling || 'Not specified',
+        data.revenue || 'Not specified',
+        data.techOpenness || 'Not specified',
+        data.goals || 'Not specified',
         data.score || 0,
-        data.category || ''
+        data.category || 'Not specified'
       ];
     }
     
+    Logger.log('Adding row to sheet');
     sheet.appendRow(row);
+    
+    Logger.log('Sending notification email');
     sendNotificationEmail(data);
+    
     return ContentService
-      .createTextOutput('OK')
+      .createTextOutput('SUCCESS')
       .setMimeType(ContentService.MimeType.TEXT);
+      
   } catch (error) {
+    Logger.log('Error in doPost: ' + error.toString());
     return ContentService
       .createTextOutput('ERROR: ' + error.toString())
       .setMimeType(ContentService.MimeType.TEXT);
@@ -96,50 +100,75 @@ function getOrCreateSpreadsheet() {
 }
 
 function sendNotificationEmail(data) {
-  if (data.type === 'AI_ASSESSMENT_REQUEST') {
-    // AI Assessment Form Email
-    var s = '🤖 New AI Assessment Request: ' + (data.company || 'Unknown Company');
-    var b = '=== NEW AI ASSESSMENT REQUEST ===\n\n';
-    b += 'CONTACT INFO:\n';
-    b += 'Name: ' + (data.fullName || 'N/A') + '\n';
-    b += 'Email: ' + (data.email || 'N/A') + '\n';
-    b += 'Company: ' + (data.company || 'N/A') + '\n';
-    b += 'Phone: ' + (data.phone || 'Not provided') + '\n';
-    b += 'Job Title: ' + (data.jobTitle || 'Not provided') + '\n\n';
+  try {
+    Logger.log('Sending email for data type: ' + data.type);
     
-    b += 'COMPANY DETAILS:\n';
-    b += 'Company Size: ' + (data.companySize || 'Not specified') + '\n';
-    b += 'Industry: ' + (data.industry || 'Not specified') + '\n\n';
-    
-    b += 'AI NEEDS:\n';
-    b += 'Primary Challenge: ' + (data.challenges || 'Not specified') + '\n';
-    b += 'AI Experience: ' + (data.aiExperience || 'Not specified') + '\n';
-    b += 'Timeline: ' + (data.timeline || 'Not specified') + '\n\n';
-    
-    if (data.additionalInfo && data.additionalInfo !== 'None provided') {
-      b += 'ADDITIONAL INFO:\n' + data.additionalInfo + '\n\n';
+    if (data.type === 'AI_ASSESSMENT_REQUEST') {
+      // AI Assessment Form Email
+      var subject = '🤖 NEW AI ASSESSMENT REQUEST: ' + (data.company || 'Unknown Company');
+      var body = '';
+      
+      body += '=== NEW AI ASSESSMENT REQUEST ===\n\n';
+      
+      body += '📋 CONTACT INFORMATION:\n';
+      body += '• Name: ' + (data.fullName || 'Not provided') + '\n';
+      body += '• Email: ' + (data.email || 'Not provided') + '\n';
+      body += '• Company: ' + (data.company || 'Not provided') + '\n';
+      body += '• Phone: ' + (data.phone || 'Not provided') + '\n';
+      body += '• Job Title: ' + (data.jobTitle || 'Not provided') + '\n\n';
+      
+      body += '🏢 COMPANY DETAILS:\n';
+      body += '• Company Size: ' + (data.companySize || 'Not specified') + '\n';
+      body += '• Industry: ' + (data.industry || 'Not specified') + '\n\n';
+      
+      body += '🤖 AI REQUIREMENTS:\n';
+      body += '• Primary Challenge: ' + (data.challenges || 'Not specified') + '\n';
+      body += '• Current AI Experience: ' + (data.aiExperience || 'Not specified') + '\n';
+      body += '• Implementation Timeline: ' + (data.timeline || 'Not specified') + '\n\n';
+      
+      if (data.additionalInfo && data.additionalInfo !== 'None provided' && data.additionalInfo.length > 0) {
+        body += '💬 ADDITIONAL INFORMATION:\n';
+        body += data.additionalInfo + '\n\n';
+      }
+      
+      body += '⏰ NEXT STEPS:\n';
+      body += '• CALL WITHIN 24 HOURS\n';
+      body += '• Focus conversation on: ' + (data.challenges || 'General AI optimization') + '\n';
+      body += '• Timeline expectation: ' + (data.timeline || 'To be determined') + '\n';
+      body += '• Email: ' + (data.email || 'Not provided') + '\n\n';
+      
+      body += '🗓️ Submitted: ' + (data.timestamp || new Date().toISOString()) + '\n';
+      
+      Logger.log('Sending AI assessment email to: ' + NOTIFY_EMAIL);
+      MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+      
+    } else {
+      // Regular Assessment Email
+      var subject = '📊 NEW ASSESSMENT LEAD: ' + (data.company || data.name || 'Unknown');
+      var body = '';
+      
+      body += '=== NEW WEBSITE ASSESSMENT ===\n\n';
+      body += '• Name: ' + (data.name || data.fullName || 'Not provided') + '\n';
+      body += '• Email: ' + (data.email || 'Not provided') + '\n';
+      body += '• Company: ' + (data.company || 'Not provided') + '\n';
+      body += '• Phone: ' + (data.phone || 'Not provided') + '\n';
+      
+      if (data.score) {
+        body += '• Assessment Score: ' + data.score + '\n';
+      }
+      if (data.challenges) {
+        body += '• Main Challenges: ' + data.challenges + '\n';
+      }
+      
+      body += '\n🗓️ Submitted: ' + new Date().toISOString() + '\n';
+      
+      Logger.log('Sending regular assessment email to: ' + NOTIFY_EMAIL);
+      MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
     }
     
-    b += '=== NEXT STEPS ===\n';
-    b += '• Call within 24 hours to discuss AI assessment\n';
-    b += '• Focus on their primary challenge: ' + (data.challenges || 'General optimization') + '\n';
-    b += '• Timeline: ' + (data.timeline || 'Unknown') + '\n';
+    Logger.log('Email sent successfully');
     
-    MailApp.sendEmail(NOTIFY_EMAIL, s, b);
-  } else {
-    // Regular Assessment Email
-    var s = '📊 New Assessment Lead: ' + (data.company || data.name || 'Unknown');
-    var b = '=== NEW WEBSITE ASSESSMENT ===\n\n';
-    b += 'Name: ' + (data.name || data.fullName || 'N/A') + '\n';
-    b += 'Email: ' + (data.email || 'N/A') + '\n';
-    b += 'Company: ' + (data.company || 'N/A') + '\n';
-    b += 'Phone: ' + (data.phone || 'Not provided') + '\n';
-    if (data.score) {
-      b += 'Assessment Score: ' + data.score + '\n';
-    }
-    if (data.challenges) {
-      b += 'Main Challenges: ' + data.challenges + '\n';
-    }
-    MailApp.sendEmail(NOTIFY_EMAIL, s, b);
+  } catch (emailError) {
+    Logger.log('Error sending email: ' + emailError.toString());
   }
 }

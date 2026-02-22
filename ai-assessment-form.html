@@ -192,40 +192,37 @@
             
             // Collect form data
             const formData = new FormData(this);
-            const data = {
-                type: 'AI_ASSESSMENT_REQUEST',
-                fullName: formData.get('fullName'),
-                email: formData.get('email'),
-                company: formData.get('company'),
-                phone: formData.get('phone') || 'Not provided',
-                jobTitle: formData.get('jobTitle') || 'Not provided',
-                companySize: formData.get('companySize'),
-                industry: formData.get('industry') || 'Not specified',
-                challenges: formData.get('challenges'),
-                aiExperience: formData.get('aiExperience') || 'Not specified',
-                timeline: formData.get('timeline') || 'Not specified',
-                additionalInfo: formData.get('additionalInfo') || 'None provided',
-                timestamp: new Date().toISOString()
-            };
             
-            // Send to Google Apps Script (same endpoint as main assessment)
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO6edYQxLiSqvn_Sx8LC5fPzTNtovW314RubxynLkFEh8y6qBcykLPVJw1sBgIHKgq/exec';
+            // Build URL-encoded data string
+            const data = new URLSearchParams();
+            data.append('type', 'AI_ASSESSMENT_REQUEST');
+            data.append('fullName', formData.get('fullName') || '');
+            data.append('email', formData.get('email') || '');
+            data.append('company', formData.get('company') || '');
+            data.append('phone', formData.get('phone') || 'Not provided');
+            data.append('jobTitle', formData.get('jobTitle') || 'Not provided');
+            data.append('companySize', formData.get('companySize') || '');
+            data.append('industry', formData.get('industry') || 'Not specified');
+            data.append('challenges', formData.get('challenges') || '');
+            data.append('aiExperience', formData.get('aiExperience') || 'Not specified');
+            data.append('timeline', formData.get('timeline') || 'Not specified');
+            data.append('additionalInfo', formData.get('additionalInfo') || 'None provided');
+            data.append('timestamp', new Date().toISOString());
             
-            fetch(GOOGLE_SCRIPT_URL, {
+            // Send to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbzO6edYQxLiSqvn_Sx8LC5fPzTNtovW314RubxynLkFEh8y6qBcykLPVJw1sBgIHKgq/exec', {
                 method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                body: data,
                 mode: 'no-cors'
             })
             .then(() => {
-                // Show success message
+                // Show success message (note: no-cors means we can't read the response)
                 successMessage.style.display = 'block';
                 this.style.display = 'none';
             })
-            .catch(() => {
-                // Still show success (no-cors mode doesn't allow reading response)
+            .catch((error) => {
+                console.error('Error:', error);
+                // Still show success message since no-cors prevents reading errors
                 successMessage.style.display = 'block';
                 this.style.display = 'none';
             });
