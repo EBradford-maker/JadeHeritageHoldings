@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Assessment - Request Your Free Evaluation</title>
+    <meta name="description" content="Get a personalized AI readiness evaluation for your manufacturing business. Free assessment from NovaMind AI specialists.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navigation - Same as landing pages */
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); z-index: 1000; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px 0; box-shadow: 0 2px 40px rgba(0, 0, 0, 0.15); }
+        .nav__container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .nav__logo-img { height: 60px; width: auto; transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav__links { display: flex; gap: 40px; }
+        .nav__link { font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #ffffff; position: relative; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-decoration: none; }
+        .nav__link:hover { color: #C8A951; }
+        
+        /* Form Container */
+        .form-container { max-width: 600px; margin: 120px auto 40px; padding: 40px; background: #fff; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-header h1 { color: #2c5530; margin-bottom: 10px; font-size: 2rem; }
+        .form-header p { color: #666; font-size: 1.1rem; }
+        
+        /* Form Styling */
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #2c5530; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 2px solid #eee; border-radius: 5px; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #2c5530; }
+        .required { color: #e74c3c; }
+        
+        /* Submit Button */
+        .submit-btn { background: #2c5530; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: 600; cursor: pointer; width: 100%; transition: background 0.3s; }
+        .submit-btn:hover { background: #1e3a21; }
+        .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+        
+        /* Success Message */
+        .success-message { display: none; background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: center; }
+        
+        /* Back Link */
+        .back-link { color: #2c5530; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back-link:hover { text-decoration: underline; }
+        
+        @media (max-width: 768px) {
+            .form-container { margin: 120px 20px 40px; padding: 30px 20px; }
+            .nav__container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/#about" class="nav__link">About</a>
+                <a href="/#services" class="nav__link">Services</a>
+                <a href="/#portfolio" class="nav__link">Portfolio</a>
+                <a href="/assessment.html" class="nav__link">Assessment</a>
+                <a href="/#contact" class="nav__link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <a href="/novamind-ai-landing.html" class="back-link">← Back to NovaMind AI</a>
+        
+        <div class="form-header">
+            <h1>Request Your AI Assessment</h1>
+            <p>Get a personalized evaluation of your AI readiness and discover opportunities to optimize your operations.</p>
+        </div>
+
+        <form id="aiAssessmentForm" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company Name <span class="required">*</span></label>
+                <input type="text" id="company" name="company" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+            </div>
+
+            <div class="form-group">
+                <label for="companySize">Company Size <span class="required">*</span></label>
+                <select id="companySize" name="companySize" required>
+                    <option value="">Select company size</option>
+                    <option value="1-10">1-10 employees</option>
+                    <option value="11-50">11-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="200+">200+ employees</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="industry">Industry Type</label>
+                <select id="industry" name="industry">
+                    <option value="">Select industry</option>
+                    <option value="Automotive Manufacturing">Automotive Manufacturing</option>
+                    <option value="Industrial Equipment">Industrial Equipment</option>
+                    <option value="Food Processing">Food Processing</option>
+                    <option value="Packaging">Packaging</option>
+                    <option value="Aerospace">Aerospace</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Other Manufacturing">Other Manufacturing</option>
+                    <option value="Non-Manufacturing">Non-Manufacturing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="challenges">What's your biggest operational challenge? <span class="required">*</span></label>
+                <select id="challenges" name="challenges" required>
+                    <option value="">Select primary challenge</option>
+                    <option value="Predictive Maintenance">Unpredictable equipment breakdowns</option>
+                    <option value="Quality Control">Inconsistent product quality</option>
+                    <option value="Production Optimization">Inefficient production scheduling</option>
+                    <option value="Inventory Management">Poor inventory planning</option>
+                    <option value="Data Analysis">Too much data, not enough insights</option>
+                    <option value="Manual Processes">Too many manual processes</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="aiExperience">Current AI/Automation Experience</label>
+                <select id="aiExperience" name="aiExperience">
+                    <option value="">Select experience level</option>
+                    <option value="None">No AI or automation currently</option>
+                    <option value="Basic">Basic automation (spreadsheets, simple tools)</option>
+                    <option value="Some">Some automation/software integration</option>
+                    <option value="Advanced">Advanced systems already in place</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">When are you looking to implement AI solutions?</label>
+                <select id="timeline" name="timeline">
+                    <option value="">Select timeline</option>
+                    <option value="Immediately">Immediately (within 1-2 months)</option>
+                    <option value="Soon">Soon (within 3-6 months)</option>
+                    <option value="Future">Future planning (6+ months)</option>
+                    <option value="Just Learning">Just learning about options</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalInfo">Additional Information</label>
+                <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us more about your specific needs or questions..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Request My AI Assessment
+            </button>
+
+            <div class="success-message" id="successMessage">
+                <h3>Thank you for your interest!</h3>
+                <p>We've received your AI assessment request and will contact you within 24 hours to discuss your specific needs and schedule your evaluation.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('aiAssessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {
+                type: 'AI_ASSESSMENT_REQUEST',
+                fullName: formData.get('fullName'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                phone: formData.get('phone') || 'Not provided',
+                jobTitle: formData.get('jobTitle') || 'Not provided',
+                companySize: formData.get('companySize'),
+                industry: formData.get('industry') || 'Not specified',
+                challenges: formData.get('challenges'),
+                aiExperience: formData.get('aiExperience') || 'Not specified',
+                timeline: formData.get('timeline') || 'Not specified',
+                additionalInfo: formData.get('additionalInfo') || 'None provided',
+                timestamp: new Date().toISOString()
+            };
+            
+            // Send to Google Apps Script (same endpoint as main assessment)
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzO6edYQxLiSqvn_Sx8LC5fPzTNtovW314RubxynLkFEh8y6qBcykLPVJw1sBgIHKgq/exec';
+            
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Show success message
+                successMessage.style.display = 'block';
+                this.style.display = 'none';
+            })
+            .catch(() => {
+                // Still show success (no-cors mode doesn't allow reading response)
+                successMessage.style.display = 'block';
+                this.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

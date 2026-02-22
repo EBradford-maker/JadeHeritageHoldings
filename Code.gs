@@ -3,28 +3,66 @@ var NOTIFY_EMAIL = 'Ethan.Bradford88@gmail.com';
 
 function doPost(e) {
   try {
-    var data = e.parameter;
+    // Handle both URL-encoded and JSON data
+    var data = {};
+    if (e.parameter) {
+      data = e.parameter;
+    } else if (e.postData && e.postData.contents) {
+      try {
+        data = JSON.parse(e.postData.contents);
+      } catch (parseError) {
+        data = e.parameter || {};
+      }
+    }
+    
     var ss = getOrCreateSpreadsheet();
     var sheet = ss.getSheets()[0];
-    var row = [
-      new Date(),
-      data.name || '',
-      data.email || '',
-      data.company || '',
-      data.phone || '',
-      data.industry || '',
-      data.employees || '',
-      data.techLevel || '',
-      data.manualHours || '',
-      data.aiAdoption || '',
-      data.challenges || '',
-      data.customerHandling || '',
-      data.revenue || '',
-      data.techOpenness || '',
-      data.goals || '',
-      data.score || 0,
-      data.category || ''
-    ];
+    
+    // Check if this is an AI Assessment request vs regular assessment
+    if (data.type === 'AI_ASSESSMENT_REQUEST') {
+      // Handle AI Assessment Form
+      var row = [
+        new Date(),
+        data.fullName || '',
+        data.email || '',
+        data.company || '',
+        data.phone || 'Not provided',
+        data.industry || 'Not specified',
+        data.companySize || '',
+        'AI Assessment Request',
+        data.aiExperience || 'Not specified',
+        data.timeline || 'Not specified',
+        data.challenges || '',
+        'Direct Form Submission',
+        'Not specified',
+        'Interested in AI',
+        data.additionalInfo || 'None',
+        'AI Request',
+        'AI Assessment Form'
+      ];
+    } else {
+      // Handle regular assessment form
+      var row = [
+        new Date(),
+        data.name || data.fullName || '',
+        data.email || '',
+        data.company || '',
+        data.phone || '',
+        data.industry || '',
+        data.employees || data.companySize || '',
+        data.techLevel || '',
+        data.manualHours || '',
+        data.aiAdoption || '',
+        data.challenges || '',
+        data.customerHandling || '',
+        data.revenue || '',
+        data.techOpenness || '',
+        data.goals || '',
+        data.score || 0,
+        data.category || ''
+      ];
+    }
+    
     sheet.appendRow(row);
     sendNotificationEmail(data);
     return ContentService
@@ -58,10 +96,50 @@ function getOrCreateSpreadsheet() {
 }
 
 function sendNotificationEmail(data) {
-  var s = 'New Lead: ' + (data.name || 'Unknown');
-  var b = 'Name: ' + (data.name || 'N/A');
-  b = b + '\nEmail: ' + (data.email || 'N/A');
-  b = b + '\nCompany: ' + (data.company || 'N/A');
-  b = b + '\nScore: ' + (data.score || 0);
-  MailApp.sendEmail(NOTIFY_EMAIL, s, b);
+  if (data.type === 'AI_ASSESSMENT_REQUEST') {
+    // AI Assessment Form Email
+    var s = '🤖 New AI Assessment Request: ' + (data.company || 'Unknown Company');
+    var b = '=== NEW AI ASSESSMENT REQUEST ===\n\n';
+    b += 'CONTACT INFO:\n';
+    b += 'Name: ' + (data.fullName || 'N/A') + '\n';
+    b += 'Email: ' + (data.email || 'N/A') + '\n';
+    b += 'Company: ' + (data.company || 'N/A') + '\n';
+    b += 'Phone: ' + (data.phone || 'Not provided') + '\n';
+    b += 'Job Title: ' + (data.jobTitle || 'Not provided') + '\n\n';
+    
+    b += 'COMPANY DETAILS:\n';
+    b += 'Company Size: ' + (data.companySize || 'Not specified') + '\n';
+    b += 'Industry: ' + (data.industry || 'Not specified') + '\n\n';
+    
+    b += 'AI NEEDS:\n';
+    b += 'Primary Challenge: ' + (data.challenges || 'Not specified') + '\n';
+    b += 'AI Experience: ' + (data.aiExperience || 'Not specified') + '\n';
+    b += 'Timeline: ' + (data.timeline || 'Not specified') + '\n\n';
+    
+    if (data.additionalInfo && data.additionalInfo !== 'None provided') {
+      b += 'ADDITIONAL INFO:\n' + data.additionalInfo + '\n\n';
+    }
+    
+    b += '=== NEXT STEPS ===\n';
+    b += '• Call within 24 hours to discuss AI assessment\n';
+    b += '• Focus on their primary challenge: ' + (data.challenges || 'General optimization') + '\n';
+    b += '• Timeline: ' + (data.timeline || 'Unknown') + '\n';
+    
+    MailApp.sendEmail(NOTIFY_EMAIL, s, b);
+  } else {
+    // Regular Assessment Email
+    var s = '📊 New Assessment Lead: ' + (data.company || data.name || 'Unknown');
+    var b = '=== NEW WEBSITE ASSESSMENT ===\n\n';
+    b += 'Name: ' + (data.name || data.fullName || 'N/A') + '\n';
+    b += 'Email: ' + (data.email || 'N/A') + '\n';
+    b += 'Company: ' + (data.company || 'N/A') + '\n';
+    b += 'Phone: ' + (data.phone || 'Not provided') + '\n';
+    if (data.score) {
+      b += 'Assessment Score: ' + data.score + '\n';
+    }
+    if (data.challenges) {
+      b += 'Main Challenges: ' + data.challenges + '\n';
+    }
+    MailApp.sendEmail(NOTIFY_EMAIL, s, b);
+  }
 }
