@@ -9,18 +9,50 @@
         body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header */
-        header { background: #fff; padding: 1rem 0; border-bottom: 1px solid #eee; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .header-nav { display: flex; flex-direction: column; gap: 5px; }
-        .back-link { font-size: 0.8rem; color: #666; text-decoration: none; transition: color 0.3s; }
-        .back-link:hover { color: #2c5530; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #2c5530; }
-        .cta-button { background: #2c5530; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .cta-button:hover { background: #1e3a21; }
+        /* Navigation */
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(27, 94, 32, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 1000; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px 0; }
+        .nav__container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .nav__logo-img { height: 60px; width: auto; transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav__links { display: flex; gap: 40px; }
+        .nav__link { font-size: 0.85rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: #ffffff; position: relative; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav__link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #C8A951; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav__link:hover::after, .nav__link.active::after { width: 100%; }
+        .nav__link:hover { color: #C8A951; }
+        
+        /* Portfolio Dropdown */
+        .nav__dropdown { position: relative; display: inline-block; }
+        .nav__dropdown-trigger { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .dropdown-arrow { font-size: 0.7rem; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .nav__dropdown:hover .dropdown-arrow { transform: rotate(180deg); }
+        .nav__dropdown-menu { position: absolute; top: calc(100% + 15px); left: 50%; transform: translateX(-50%); background: #ffffff; border-radius: 8px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); padding: 8px 0; min-width: 240px; opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-10px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; }
+        .nav__dropdown:hover .nav__dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .nav__dropdown-item { display: flex; flex-direction: column; padding: 12px 20px; color: #333333; transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); border-left: 3px solid transparent; }
+        .nav__dropdown-item:hover { background-color: #FAFAF5; border-left-color: #2E7D32; }
+        .nav__dropdown-item strong { font-size: 0.9rem; font-weight: 600; color: #1B5E20; margin-bottom: 2px; }
+        .nav__dropdown-item span { font-size: 0.75rem; color: #666666; text-transform: none; }
+        
+        /* Mobile Navigation */
+        .nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 6px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; }
+        .nav__hamburger span { display: block; width: 100%; height: 2px; background: #ffffff; transition: all 0.3s ease; border-radius: 2px; }
+        .nav__hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .nav__hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav__hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: rgba(27, 94, 32, 0.98); backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: center; transition: right 0.3s ease; z-index: 999; }
+        .mobile-menu.active { right: 0; }
+        .mobile-menu__links { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+        .mobile-menu__link { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; color: #ffffff; transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-menu__link:hover { color: #C8A951; }
+        .mobile-portfolio-links { display: flex; flex-direction: column; gap: 16px; margin-top: -16px; }
+        .mobile-menu__sublink { font-size: 1.2rem !important; color: #C8A951 !important; margin-left: 20px; }
+        
+        @media (max-width: 768px) {
+            .nav__links { display: none; }
+            .nav__hamburger { display: flex; }
+            .nav__dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: transparent; padding: 0; }
+        }
         
         /* Hero Section */
-        .hero { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 4rem 0; text-align: center; }
+        .hero { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 6rem 0 4rem; text-align: center; margin-top: 100px; }
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #2c5530; }
         .hero .tagline { font-size: 1.3rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         .hero-cta { display: inline-block; background: #2c5530; color: white; padding: 15px 30px; font-size: 1.1rem; text-decoration: none; border-radius: 5px; margin-top: 1rem; }
@@ -61,18 +93,60 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="header-nav">
-                    <a href="/" class="back-link">← Jade Heritage Holdings</a>
-                    <div class="logo">Jade Digital Solutions</div>
+    <!-- Navigation -->
+    <header class="nav" id="navbar">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="assets/logo.png" alt="Jade Heritage Holdings" class="nav__logo-img">
+            </a>
+            <nav class="nav__links" id="navLinks">
+                <a href="/" class="nav__link">Home</a>
+                <a href="/#about" class="nav__link">About</a>
+                <a href="/#services" class="nav__link">Services</a>
+                <div class="nav__dropdown">
+                    <a href="/#portfolio" class="nav__link nav__dropdown-trigger">Portfolio <span class="dropdown-arrow">▼</span></a>
+                    <div class="nav__dropdown-menu">
+                        <a href="/novamind-ai-landing.html" class="nav__dropdown-item">
+                            <strong>NovaMind AI</strong>
+                            <span>AI & Machine Learning</span>
+                        </a>
+                        <a href="/greenlight-marketing-landing.html" class="nav__dropdown-item">
+                            <strong>Greenlight Marketing</strong>
+                            <span>B2B Marketing</span>
+                        </a>
+                        <a href="/jade-digital-solutions-landing.html" class="nav__dropdown-item">
+                            <strong>Jade Digital Solutions</strong>
+                            <span>Custom Software</span>
+                        </a>
+                    </div>
                 </div>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
+                <a href="/assessment.html" class="nav__link">Assessment</a>
+                <a href="/#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__links">
+            <a href="/" class="mobile-menu__link">Home</a>
+            <a href="/#about" class="mobile-menu__link">About</a>
+            <a href="/#services" class="mobile-menu__link">Services</a>
+            <a href="/#portfolio" class="mobile-menu__link">Portfolio</a>
+            <div class="mobile-portfolio-links">
+                <a href="/novamind-ai-landing.html" class="mobile-menu__link mobile-menu__sublink">→ NovaMind AI</a>
+                <a href="/greenlight-marketing-landing.html" class="mobile-menu__link mobile-menu__sublink">→ Greenlight Marketing</a>
+                <a href="/jade-digital-solutions-landing.html" class="mobile-menu__link mobile-menu__sublink">→ Jade Digital Solutions</a>
+            </div>
+            <a href="/assessment.html" class="mobile-menu__link">Assessment</a>
+            <a href="/#contact" class="mobile-menu__link">Contact</a>
+        </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -175,5 +249,26 @@
             <div class="phone">Free 30-minute consultation - No obligations</div>
         </div>
     </section>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu__link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
 </body>
 </html>
