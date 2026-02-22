@@ -12,6 +12,9 @@
         /* Header */
         header { background: #fff; padding: 1rem 0; border-bottom: 1px solid #eee; }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-nav { display: flex; flex-direction: column; gap: 5px; }
+        .back-link { font-size: 0.8rem; color: #666; text-decoration: none; transition: color 0.3s; }
+        .back-link:hover { color: #2c5530; }
         .logo { font-size: 1.5rem; font-weight: bold; color: #2c5530; }
         .cta-button { background: #2c5530; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; }
         .cta-button:hover { background: #1e3a21; }
@@ -62,7 +65,10 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">NovaMind AI</div>
+                <div class="header-nav">
+                    <a href="/" class="back-link">← Jade Heritage Holdings</a>
+                    <div class="logo">NovaMind AI</div>
+                </div>
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
         </div>

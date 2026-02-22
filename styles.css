@@ -309,12 +309,106 @@ h1, h2, h3, h4 {
     color: var(--gold);
 }
 
+.mobile-portfolio-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: -16px;
+}
+
+.mobile-menu__sublink {
+    font-size: 1.2rem !important;
+    color: var(--gold) !important;
+    margin-left: 20px;
+}
+
+/* Portfolio Dropdown */
+.nav__dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav__dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform var(--transition);
+}
+
+.nav__dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav__dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all var(--transition);
+    z-index: 1000;
+}
+
+.nav__dropdown:hover .nav__dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav__dropdown-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    color: var(--text);
+    transition: background-color var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.nav__dropdown-item:hover {
+    background-color: var(--cream);
+    border-left-color: var(--jade-mid);
+}
+
+.nav__dropdown-item strong {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--jade-dark);
+    margin-bottom: 2px;
+}
+
+.nav__dropdown-item span {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: none;
+}
+
 @media (max-width: 768px) {
     .nav__links {
         display: none;
     }
     .nav__hamburger {
         display: flex;
+    }
+    .nav__dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
     }
 }
 
